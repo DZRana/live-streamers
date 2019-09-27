@@ -23,9 +23,16 @@ class App extends Component {
 
   render() {
     return (
-      <Button color="success" onClick={() => this.onButtonPress()}>
-        Sign In
-      </Button>
+      <div className="d-flex align-items-center min-vh-100">
+        <Container className="text-center">
+          <a
+            href="https://id.twitch.tv/oauth2/authorize?client_id=oj5sely04mm226nxlcg9uu7maodn2n&redirect_uri=http://localhost:3000/&response_type=token&scope=channel_feed_read"
+            className="btn btn-primary"
+          >
+            Sign In
+          </a>
+        </Container>
+      </div>
     );
     {
       /*
