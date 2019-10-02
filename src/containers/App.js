@@ -3,7 +3,6 @@ import StreamerList from "../components/StreamerList";
 import { Jumbotron, Container, Button } from "reactstrap";
 import "./App.css";
 import clientId from "../api/secrets";
-import axios from "axios";
 
 class App extends Component {
   constructor() {
@@ -14,11 +13,13 @@ class App extends Component {
   async onButtonPress() {
     const oauth = `Bearer ${document.location.hash.substring(14, 44)}`;
     console.log(oauth);
-    axios.defaults.headers.common["Authorization"] = oauth;
 
     try {
-      const response = await axios.get(`https://api.twitch.tv/helix/users`);
-      console.log(response);
+      const response = await fetch(`https://api.twitch.tv/helix/users`, {
+        headers: { Authorization: oauth }
+      });
+      const json = await response.json();
+      console.log(json.data[0].id);
     } catch (error) {
       console.log("ERROR BRO: ", error);
     }
