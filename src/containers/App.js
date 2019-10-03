@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import StreamerList from "../components/StreamerList";
 import { Jumbotron, Container, Button } from "reactstrap";
+import TwitchPlayer from "react-player/lib/players/Twitch";
 import "./App.css";
 import clientId from "../api/secrets";
 
@@ -28,6 +29,12 @@ class App extends Component {
   render() {
     return (
       <div className="d-flex align-items-center min-vh-100">
+        <TwitchPlayer
+          url="https://www.twitch.tv/videos/488888886"
+          width="1500px"
+          height="500px"
+          controls
+        />
         <Container className="text-center">
           <a
             href={`https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=http://localhost:3000/&response_type=token&scope=channel_feed_read`}
