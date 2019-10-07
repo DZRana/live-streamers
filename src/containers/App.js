@@ -54,7 +54,7 @@ class App extends Component {
             <Col>
               <Sidebar />
             </Col>
-            <Col>
+            <Col className="pt-5">
               <Player />
               <Button onClick={() => this.onButtonClick()}>CLICK ME</Button>
             </Col>
