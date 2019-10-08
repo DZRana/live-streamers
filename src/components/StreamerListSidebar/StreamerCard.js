@@ -8,7 +8,7 @@ import {
   CardSubtitle
 } from "reactstrap";
 
-const StreamerCard = () => {
+const StreamerCard = ({ user_name, title, viewer_count }) => {
   return (
     <div>
       <Card>
@@ -19,12 +19,9 @@ const StreamerCard = () => {
           alt="Card image cap"
         />
         <CardBody>
-          <CardTitle>Card title</CardTitle>
-          <CardSubtitle>Card subtitle</CardSubtitle>
-          <CardText>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </CardText>
+          <CardTitle>{user_name}</CardTitle>
+          <CardSubtitle>{viewer_count}</CardSubtitle>
+          <CardText>{title}</CardText>
         </CardBody>
       </Card>
     </div>

@@ -10,7 +10,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      streamers: []
+      liveChannelsStream: [],
+      liveChannelsProfile: []
     };
   }
 
@@ -59,40 +60,42 @@ class App extends Component {
         headers: { Authorization: oauth }
       });
       const json = await response.json();
-      this.setState({ streamers: json.data });
-      console.log(this.state.streamers);
+      this.setState({ liveChannelsStream: json.data });
     } catch (error) {
       console.log("ERROR BRO: ", error);
     }
 
-    // TODO: Get LIVE channel profiles.
+    // Get LIVE channel profiles.
     try {
+      const { liveChannelsStream } = this.state;
       let queryString = "https://api.twitch.tv/helix/users?login=";
-      for (let i = 0; i < this.state.streamers.length; i++) {
-        if (i !== this.state.streamers.length - 1)
-          console.log(i, this.state.streamer[i]);
-        else queryString += streamerIdArr[i];
+      for (let i = 0; i < liveChannelsStream.length; i++) {
+        if (i !== liveChannelsStream.length - 1)
+        queryString += `${liveChannelsStream[i].user_name}&login=`;
+        else queryString += liveChannelsStream[i].user_name;
       }
 
       const response = await fetch(queryString, {
         headers: { Authorization: oauth }
       });
       const json = await response.json();
-      this.setState({ streamers: json.data });
-      console.log(this.state.streamers);
+      this.setState({ liveChannelsProfile: json.data });
+      console.log(this.state.liveChannelsStream);
+      console.log(this.state.liveChannelsProfile);
     } catch (error) {
       console.log("ERROR BRO: ", error);
     }
   }
 
   render() {
+    const { liveChannelsStream, liveChannelsProfile } = this.state;
     return (
       <div>
         <TopNavbar />
         <Container fluid>
           <Row>
             <Col>
-              <StreamerListSidebar streamers={this.state.streamers} />
+              <StreamerListSidebar liveChannelsStream={liveChannelsStream} liveChannelsProfile={liveChannelsProfile} />
             </Col>
             <Col className="pt-5">
               <Player />
