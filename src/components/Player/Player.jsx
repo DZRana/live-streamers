@@ -6,7 +6,7 @@ const Player = () => {
     <TwitchPlayer
       url="https://www.twitch.tv/fuslie"
       width="81.7vw"
-      height="80vh"
+      height="95vh"
       controls
       playing
     />
