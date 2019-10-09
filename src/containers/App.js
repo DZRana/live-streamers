@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import StreamerList from "../components/StreamerListSidebar/StreamerListSidebar";
 import TopNavbar from "../components/Navbar/TopNavbar";
 import StreamerListSidebar from "../components/StreamerListSidebar/StreamerListSidebar";
 import Player from "../components/Player/Player";
-import { Jumbotron, Container, Button, Row, Col } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import "./App.css";
 
 class App extends Component {
@@ -11,7 +10,8 @@ class App extends Component {
     super();
     this.state = {
       liveChannelsStream: [],
-      liveChannelsProfile: []
+      liveChannelsProfile: [],
+      currentChannel: ""
     };
   }
 
@@ -71,7 +71,7 @@ class App extends Component {
       let queryString = "https://api.twitch.tv/helix/users?login=";
       for (let i = 0; i < liveChannelsStream.length; i++) {
         if (i !== liveChannelsStream.length - 1)
-        queryString += `${liveChannelsStream[i].user_name}&login=`;
+          queryString += `${liveChannelsStream[i].user_name}&login=`;
         else queryString += liveChannelsStream[i].user_name;
       }
 
@@ -80,25 +80,35 @@ class App extends Component {
       });
       const json = await response.json();
       this.setState({ liveChannelsProfile: json.data });
-      console.log(this.state.liveChannelsStream);
-      console.log(this.state.liveChannelsProfile);
     } catch (error) {
       console.log("ERROR BRO: ", error);
     }
   }
 
+  changeChannel = url => {
+    this.setState({ currentChannel: url });
+  };
+
   render() {
-    const { liveChannelsStream, liveChannelsProfile } = this.state;
+    const {
+      liveChannelsStream,
+      liveChannelsProfile,
+      currentChannel
+    } = this.state;
     return (
       <div>
         <TopNavbar />
         <Container fluid>
           <Row>
             <Col>
-              <StreamerListSidebar liveChannelsStream={liveChannelsStream} liveChannelsProfile={liveChannelsProfile} />
+              <StreamerListSidebar
+                liveChannelsStream={liveChannelsStream}
+                liveChannelsProfile={liveChannelsProfile}
+                changeChannel={this.changeChannel}
+              />
             </Col>
             <Col className="pt-5">
-              <Player />
+              <Player currentChannel={currentChannel} />
             </Col>
           </Row>
         </Container>
