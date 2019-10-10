@@ -14,23 +14,23 @@ const StreamerListSidebar = ({
     <Nav className="col-md-2 d-none d-md-block bg-dark sidebar">
       <div className="sidebar-sticky">
         <ul className="nav flex-column">
-          <h1>hey</h1>
-          {/*
           {liveChannelsStream.map((user, i) => {
-            return (
-              <StreamerCard
-                key={liveChannelsStream[i].id}
-                user_name={liveChannelsStream[i].user_name}
-                title={liveChannelsStream[i].title}
-                viewer_count={liveChannelsStream[i].viewer_count}
-                url={`https://www.twitch.tv/${liveChannelsStream[
-                  i
-                ].user_name.toLowerCase()}`}
-                changeChannel={changeChannel}
-              />
-            );
+            if (liveChannelsProfile.length !== 0) {
+              return (
+                <StreamerCard
+                  key={liveChannelsStream[i].id}
+                  user_name={liveChannelsStream[i].user_name}
+                  title={liveChannelsStream[i].title}
+                  viewer_count={liveChannelsStream[i].viewer_count}
+                  url={`https://www.twitch.tv/${liveChannelsStream[
+                    i
+                  ].user_name.toLowerCase()}`}
+                  profile_image_url={liveChannelsProfile[i].profile_image_url}
+                  changeChannel={changeChannel}
+                />
+              );
+            } else return <h1 key={liveChannelsStream[i].id}>LOADING!</h1>;
           })}
-        */}
         </ul>
       </div>
     </Nav>

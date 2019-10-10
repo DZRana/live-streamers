@@ -14,6 +14,7 @@ const StreamerCard = ({
   title,
   viewer_count,
   url,
+  profile_image_url,
   changeChannel
 }) => {
   return (
@@ -23,7 +24,7 @@ const StreamerCard = ({
           <CardImg
             top
             width="100%"
-            src="https://cdn.arstechnica.net/wp-content/uploads/2014/05/twitchtv-640x312.jpg"
+            src={profile_image_url}
             alt="Card image cap"
           />
           <CardBody>

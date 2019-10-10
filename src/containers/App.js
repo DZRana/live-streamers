@@ -3,6 +3,7 @@ import TopNavbar from "../components/Navbar/TopNavbar";
 import StreamerListSidebar from "../components/StreamerListSidebar/StreamerListSidebar";
 import Player from "../components/Player/Player";
 import { Container, Row, Col } from "reactstrap";
+import clientId from "../api/secrets";
 import "./App.css";
 
 class App extends Component {
@@ -95,7 +96,13 @@ class App extends Component {
       liveChannelsProfile,
       currentChannel
     } = this.state;
-    return (
+    return document.location.hash === "" ? (
+      <a
+        href={`https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=http://localhost:3000/&response_type=token&scope=channel_feed_read`}
+      >
+        Sign In
+      </a>
+    ) : (
       <div>
         <TopNavbar />
         <Container fluid>
