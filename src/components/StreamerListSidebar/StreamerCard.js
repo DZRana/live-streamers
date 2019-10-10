@@ -29,8 +29,8 @@ const StreamerCard = ({
           />
           <CardBody>
             <CardTitle>{user_name}</CardTitle>
-            <CardSubtitle>{viewer_count}</CardSubtitle>
-            <CardText>{title}</CardText>
+            <CardSubtitle>{title}</CardSubtitle>
+            <CardText>{`Viewers: ${viewer_count}`}</CardText>
           </CardBody>
         </Button>
       </Card>
