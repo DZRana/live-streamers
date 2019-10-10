@@ -4,9 +4,9 @@ import TwitchPlayer from "react-player/lib/players/Twitch";
 const Player = ({ currentChannel }) => {
   return (
     <TwitchPlayer
-      url={`${currentChannel}`}
+      url={currentChannel}
       width="81.7vw"
-      height="95vh"
+      height="94.5vh"
       controls
       playing
     />

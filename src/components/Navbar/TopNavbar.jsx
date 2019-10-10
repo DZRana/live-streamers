@@ -7,10 +7,9 @@ class TopNavbar extends Component {
     this.state = {};
   }
   render() {
-    console.log("iwjdwia");
     return (
       <Navbar color="dark" dark className="fixed-top flex-md-nowrap p-0 shadow">
-        <NavbarBrand href="#" className="col-sm-3 col-md-2 mr-0">
+        <NavbarBrand href={document.URL} className="col-sm-3 col-md-2 mr-0">
           Twitch
         </NavbarBrand>
         <Nav>
