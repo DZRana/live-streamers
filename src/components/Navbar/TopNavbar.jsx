@@ -9,14 +9,12 @@ class TopNavbar extends Component {
   render() {
     return (
       <Navbar color="dark" dark className="fixed-top flex-md-nowrap p-0 shadow">
-        <NavbarBrand href="http://localhost:3000" className="col-sm-3 col-md-2 mr-0">
+        <NavbarBrand
+          href="http://localhost:3000"
+          className="col-sm-3 col-md-2 mr-0"
+        >
           Twitch
         </NavbarBrand>
-        <Nav>
-          <NavItem>
-            <Input placeholder="Search" />
-          </NavItem>
-        </Nav>
       </Navbar>
     );
   }

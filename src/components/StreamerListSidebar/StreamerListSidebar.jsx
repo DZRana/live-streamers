@@ -1,5 +1,3 @@
-// TODO: Make StreamerCard clickable and change player onClick
-
 import React from "react";
 import { Nav } from "reactstrap";
 import StreamerCard from "./StreamerCard";
