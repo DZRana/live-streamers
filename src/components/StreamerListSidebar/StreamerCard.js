@@ -25,7 +25,7 @@ const StreamerCard = ({
             top
             width="100%"
             src={profile_image_url}
-            alt="Card image cap"
+            alt="Profile Image"
           />
           <CardBody>
             <CardTitle>{user_name}</CardTitle>

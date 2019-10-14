@@ -5,7 +5,7 @@ const Player = ({ currentChannel }) => {
   return (
     <TwitchPlayer
       url={currentChannel}
-      width="81.7vw"
+      width="62.5vw"
       height="94.5vh"
       controls
       playing

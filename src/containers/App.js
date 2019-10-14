@@ -114,8 +114,20 @@ class App extends Component {
                 changeChannel={this.changeChannel}
               />
             </Col>
-            <Col className="pt-5">
+            <Col className="pt-5 pl-5 pr-0">
               <Player currentChannel={currentChannel} />
+            </Col>
+            <Col>
+              <iframe 
+                className="pt-5 pl-0" 
+                title="chat" 
+                frameborder="0"
+                scrolling="yes"
+                id="chat_embed"
+                src={`https://www.twitch.tv/embed/${currentChannel.substring(22)}/chat?darkpopout`}
+                height="933"
+                width="350">
+              </iframe>
             </Col>
           </Row>
         </Container>
