@@ -13,7 +13,7 @@ const StreamerListSidebar = ({
       <div className="sidebar-sticky">
         <ul className="nav flex-column">
           {liveChannelsStream.map((user, i) => {
-            if (liveChannelsProfile.length !== 0) {
+            if (liveChannelsProfile.length === liveChannelsStream.length) {
               return (
                 <StreamerCard
                   key={liveChannelsStream[i].id}
