@@ -167,7 +167,7 @@ class App extends Component {
                 src={`https://www.twitch.tv/embed/${currentChannel.substring(
                   22
                 )}/chat?darkpopout`}
-                height="933"
+                height="920"
                 width="350"
               ></iframe>
             </Col>
