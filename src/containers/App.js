@@ -68,8 +68,8 @@ class App extends Component {
     }
 
     // Get LIVE channels and their channel profiles.
-    try {
-      setInterval(async () => {
+    const getStreamerData = async () => {
+      try {
         // Get LIVE channels
         let queryString = "https://api.twitch.tv/helix/streams?user_id=";
         for (let i = 0; i < streamerIdArr.length; i++) {
@@ -98,11 +98,13 @@ class App extends Component {
         });
         json = await response.json();
         this.setState({ liveChannelsProfile: json.data });
-      }, 12000);
+        console.log("CALLED!");
+        setTimeout(getStreamerData, 12000);
     } catch (error) {
       console.log("ERROR BRO: ", error);
     }
-
+  }
+  getStreamerData();
     /* OLD (had separate live and live profile calls. put them together so they would update together.):Get LIVE channel profiles.
     try {
       setInterval(async () => {
