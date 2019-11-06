@@ -98,7 +98,6 @@ class App extends Component {
         });
         json = await response.json();
         this.setState({ liveChannelsProfile: json.data });
-        console.log("CALLED!");
         setTimeout(getStreamerData, 12000);
     } catch (error) {
       console.log("ERROR BRO: ", error);
@@ -160,18 +159,20 @@ class App extends Component {
               <Player currentChannel={currentChannel} />
             </Col>
             <Col>
-              <iframe
-                className="pt-5 pl-0 ml-0"
-                title="chat"
-                frameBorder="0"
-                scrolling="yes"
-                id="chat_embed"
-                src={`https://www.twitch.tv/embed/${currentChannel.substring(
-                  22
-                )}/chat?darkpopout`}
-                height="920"
-                width="350"
-              ></iframe>
+              {currentChannel && 
+                <iframe
+                  className="pt-5 pl-0 ml-0"
+                  title="chat"
+                  frameBorder="0"
+                  scrolling="yes"
+                  id="chat_embed"
+                  src={`https://www.twitch.tv/embed/${currentChannel.substring(
+                    22
+                  )}/chat?darkpopout`}
+                  height="920"
+                  width="350"
+                ></iframe>
+              }
             </Col>
           </Row>
         </Container>
