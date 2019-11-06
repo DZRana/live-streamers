@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import TopNavbar from "../components/Navbar/TopNavbar";
 import StreamerListSidebar from "../components/StreamerListSidebar/StreamerListSidebar";
-import Player from "../components/Player/Player";
+import TwitchPlayer from "react-player/lib/players/Twitch";
 import { Container, Row, Col } from "reactstrap";
 import clientId from "../api/secrets";
 import "./App.css";
@@ -15,26 +15,7 @@ class App extends Component {
       currentChannel: ""
     };
   }
-
-  /*
-   async componentDidMount() {
-          try {
-            setInterval(async () => {
-              const res = await fetch('https://api.apijson.com/...');
-              const blocks = await res.json();
-              const dataPanelone = blocks.panelone;
-              const dataPaneltwo = blocks.paneltwo;
-
-              this.setState({
-                panelone: dataPanelone,
-                paneltwo: dataPaneltwo,
-              })
-            }, 30000);
-          } catch(e) {
-            console.log(e);
-          }
-    }
-  */
+  
   async componentDidMount() {
     let userId = "";
     let streamerIdArr = [];
@@ -99,32 +80,11 @@ class App extends Component {
         json = await response.json();
         this.setState({ liveChannelsProfile: json.data });
         setTimeout(getStreamerData, 12000);
-    } catch (error) {
-      console.log("ERROR BRO: ", error);
+      } catch (error) {
+        console.log("ERROR BRO: ", error);
+      }
     }
-  }
-  getStreamerData();
-    /* OLD (had separate live and live profile calls. put them together so they would update together.):Get LIVE channel profiles.
-    try {
-      setInterval(async () => {
-        const { liveChannelsStream } = this.state;
-        let queryString = "https://api.twitch.tv/helix/users?login=";
-        for (let i = 0; i < liveChannelsStream.length; i++) {
-          if (i !== liveChannelsStream.length - 1)
-            queryString += `${liveChannelsStream[i].user_name}&login=`;
-          else queryString += liveChannelsStream[i].user_name;
-        }
-
-        const response = await fetch(queryString, {
-          headers: { Authorization: oauth }
-        });
-        const json = await response.json();
-        this.setState({ liveChannelsProfile: json.data });
-      }, 12500);
-    } catch (error) {
-      console.log("ERROR BRO: ", error);
-    }
-    */
+    getStreamerData();
   }
 
   changeChannel = url => {
@@ -156,7 +116,13 @@ class App extends Component {
               />
             </Col>
             <Col className="pt-5 pl-5 pr-0 mr-0">
-              <Player currentChannel={currentChannel} />
+              <TwitchPlayer
+                url={currentChannel}
+                width="62.5vw"
+                height="94.5vh"
+                controls
+                playing
+              />
             </Col>
             <Col>
               {currentChannel && 
@@ -169,7 +135,7 @@ class App extends Component {
                   src={`https://www.twitch.tv/embed/${currentChannel.substring(
                     22
                   )}/chat?darkpopout`}
-                  height="920"
+                  height="930"
                   width="350"
                 ></iframe>
               }
