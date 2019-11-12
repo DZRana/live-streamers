@@ -8,6 +8,7 @@ import {
   CardTitle,
   CardSubtitle
 } from "reactstrap";
+import "./StreamerCard.styles.scss";
 
 const StreamerCard = ({
   user_name,
@@ -19,7 +20,7 @@ const StreamerCard = ({
 }) => {
   return (
     <div>
-      <Card>
+      <Card className="ml-2 mr-2 mb-1">
         <Button onClick={() => changeChannel(url)}>
           <CardImg
             top
@@ -28,7 +29,7 @@ const StreamerCard = ({
             alt="Profile Image"
           />
           <CardBody>
-            <CardTitle>{user_name}</CardTitle>
+            <CardTitle className="card-title">{user_name}</CardTitle>
             <CardSubtitle>{title}</CardSubtitle>
             <CardText>{`Viewers: ${viewer_count}`}</CardText>
           </CardBody>

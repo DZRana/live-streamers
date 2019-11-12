@@ -4,7 +4,6 @@ import StreamerListSidebar from "../components/StreamerListSidebar/StreamerListS
 import TwitchPlayer from "react-player/lib/players/Twitch";
 import { Container, Row, Col } from "reactstrap";
 import clientId from "../api/secrets";
-import "./App.css";
 
 class App extends Component {
   constructor() {
@@ -107,7 +106,7 @@ class App extends Component {
       <div>
         <TopNavbar />
         <Container fluid>
-          <Row>
+          <Row className="pt-5">
             <Col>
               <StreamerListSidebar
                 liveChannelsStream={liveChannelsStream}
@@ -115,10 +114,10 @@ class App extends Component {
                 changeChannel={this.changeChannel}
               />
             </Col>
-            <Col className="pt-5 pl-5 pr-0 mr-0">
+            <Col>
               <TwitchPlayer
                 url={currentChannel}
-                width="62.5vw"
+                width="63.5vw"
                 height="94.5vh"
                 controls
                 playing
@@ -127,7 +126,6 @@ class App extends Component {
             <Col>
               {currentChannel && 
                 <iframe
-                  className="pt-5 pl-0 ml-0"
                   title="chat"
                   frameBorder="0"
                   scrolling="yes"
@@ -135,8 +133,8 @@ class App extends Component {
                   src={`https://www.twitch.tv/embed/${currentChannel.substring(
                     22
                   )}/chat?darkpopout`}
-                  height="930"
-                  width="350"
+                  width="100%"
+                  height="100%"
                 ></iframe>
               }
             </Col>
