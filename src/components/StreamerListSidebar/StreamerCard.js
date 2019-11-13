@@ -29,7 +29,7 @@ const StreamerCard = ({
             alt="Profile Image"
           />
           <CardBody>
-            <CardTitle className="card-title">{user_name}</CardTitle>
+            <CardTitle>{user_name}</CardTitle>
             <CardSubtitle>{title}</CardSubtitle>
             <CardText>{`Viewers: ${viewer_count}`}</CardText>
           </CardBody>
