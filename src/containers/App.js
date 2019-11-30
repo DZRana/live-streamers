@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import TopNavbar from "../components/Navbar/TopNavbar";
 import StreamerListSidebar from "../components/StreamerListSidebar/StreamerListSidebar";
 import TwitchPlayer from "react-player/lib/players/Twitch";
-import { Container, Row, Col } from "reactstrap";
+import { Container, Row, Col, Button } from "reactstrap";
 import clientId from "../api/secrets";
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
       currentChannel: ""
     };
   }
-  
+
   async componentDidMount() {
     let userId = "";
     let streamerIdArr = [];
@@ -82,7 +82,7 @@ class App extends Component {
       } catch (error) {
         console.log("ERROR BRO: ", error);
       }
-    }
+    };
     getStreamerData();
   }
 
@@ -97,17 +97,23 @@ class App extends Component {
       currentChannel
     } = this.state;
     return document.location.hash === "" ? (
-      <a
-        href={`https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=http://localhost:3000/&response_type=token&scope=channel_feed_read`}
-      >
-        Sign In
-      </a>
+      <Container className="d-flex justify-content-center align-items-center login">
+        <a
+          href={`https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=http://localhost:3000/&response_type=token&scope=channel_feed_read`}
+        >
+          <Button className="bg-dark">Login</Button>
+        </a>
+      </Container>
     ) : (
       <div>
-        <TopNavbar />
+        <TopNavbar
+          liveChannelsStream={liveChannelsStream}
+          liveChannelsProfile={liveChannelsProfile}
+          changeChannel={this.changeChannel}
+        />
         <Container fluid>
           <Row className="pt-5">
-            <Col>
+            <Col className="d-none d-xl-block ">
               <StreamerListSidebar
                 liveChannelsStream={liveChannelsStream}
                 liveChannelsProfile={liveChannelsProfile}
@@ -117,14 +123,14 @@ class App extends Component {
             <Col>
               <TwitchPlayer
                 url={currentChannel}
-                width="63.5vw"
-                height="94.5vh"
                 controls
                 playing
+                width="63vw"
+                height="94vh"
               />
             </Col>
             <Col>
-              {currentChannel && 
+              {currentChannel && (
                 <iframe
                   title="chat"
                   frameBorder="0"
@@ -136,7 +142,7 @@ class App extends Component {
                   width="100%"
                   height="100%"
                 ></iframe>
-              }
+              )}
             </Col>
           </Row>
         </Container>

@@ -9,7 +9,7 @@ const StreamerListSidebar = ({
   changeChannel
 }) => {
   return (
-    <Nav className="col-xs-1 col-md-2 bg-dark sidebar">
+    <Nav className="col-md-2 bg-dark sidebar">
       <div className="sidebar-sticky">
         <ul className="nav flex-column">
           {liveChannelsStream.map((user, i) => {
