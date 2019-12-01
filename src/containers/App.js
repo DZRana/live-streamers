@@ -3,7 +3,7 @@ import TopNavbar from "../components/Navbar/TopNavbar";
 import StreamerListSidebar from "../components/StreamerListSidebar/StreamerListSidebar";
 import TwitchPlayer from "react-player/lib/players/Twitch";
 import { Container, Row, Col, Button } from "reactstrap";
-var clientId = process.env.CLIENTID;
+var clientId = process.env.REACT_APP_CLIENT_ID;
 
 class App extends Component {
   constructor() {
