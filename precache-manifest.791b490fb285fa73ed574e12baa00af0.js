@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d611c072c4a37610919e0c446a149949",
+    "revision": "c4cfc12a87d472759fe5a28336fcb215",
     "url": "/live-streamers/index.html"
   },
   {
