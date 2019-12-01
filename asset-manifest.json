@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/twitch-live/static/css/main.b882da27.chunk.css",
-    "main.js": "/twitch-live/static/js/main.6560f51d.chunk.js",
-    "main.js.map": "/twitch-live/static/js/main.6560f51d.chunk.js.map",
+    "main.js": "/twitch-live/static/js/main.67204dcc.chunk.js",
+    "main.js.map": "/twitch-live/static/js/main.67204dcc.chunk.js.map",
     "runtime-main.js": "/twitch-live/static/js/runtime-main.f53b1bc3.js",
     "runtime-main.js.map": "/twitch-live/static/js/runtime-main.f53b1bc3.js.map",
     "static/css/2.0624914a.chunk.css": "/twitch-live/static/css/2.0624914a.chunk.css",
     "static/js/2.cdce5904.chunk.js": "/twitch-live/static/js/2.cdce5904.chunk.js",
     "static/js/2.cdce5904.chunk.js.map": "/twitch-live/static/js/2.cdce5904.chunk.js.map",
     "index.html": "/twitch-live/index.html",
-    "precache-manifest.7db7e1f49f6094dc9a736ee571fa7d63.js": "/twitch-live/precache-manifest.7db7e1f49f6094dc9a736ee571fa7d63.js",
+    "precache-manifest.342ed6bfcf1257f683a23521ab809776.js": "/twitch-live/precache-manifest.342ed6bfcf1257f683a23521ab809776.js",
     "service-worker.js": "/twitch-live/service-worker.js",
     "static/css/2.0624914a.chunk.css.map": "/twitch-live/static/css/2.0624914a.chunk.css.map",
     "static/css/main.b882da27.chunk.css.map": "/twitch-live/static/css/main.b882da27.chunk.css.map"
