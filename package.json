@@ -1,6 +1,6 @@
 {
-  "homepage": "https://dzrana.github.io/twitch-live/",
-  "name": "twitch-live",
+  "homepage": "https://dzrana.github.io/live-streamers/",
+  "name": "live-streamers",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
