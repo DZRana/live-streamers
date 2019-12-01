@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/twitch-live/static/css/main.b882da27.chunk.css",
-    "main.js": "/twitch-live/static/js/main.67204dcc.chunk.js",
-    "main.js.map": "/twitch-live/static/js/main.67204dcc.chunk.js.map",
-    "runtime-main.js": "/twitch-live/static/js/runtime-main.f53b1bc3.js",
-    "runtime-main.js.map": "/twitch-live/static/js/runtime-main.f53b1bc3.js.map",
-    "static/css/2.0624914a.chunk.css": "/twitch-live/static/css/2.0624914a.chunk.css",
-    "static/js/2.cdce5904.chunk.js": "/twitch-live/static/js/2.cdce5904.chunk.js",
-    "static/js/2.cdce5904.chunk.js.map": "/twitch-live/static/js/2.cdce5904.chunk.js.map",
-    "index.html": "/twitch-live/index.html",
-    "precache-manifest.342ed6bfcf1257f683a23521ab809776.js": "/twitch-live/precache-manifest.342ed6bfcf1257f683a23521ab809776.js",
-    "service-worker.js": "/twitch-live/service-worker.js",
-    "static/css/2.0624914a.chunk.css.map": "/twitch-live/static/css/2.0624914a.chunk.css.map",
-    "static/css/main.b882da27.chunk.css.map": "/twitch-live/static/css/main.b882da27.chunk.css.map"
+    "main.css": "/live-streamers/static/css/main.b882da27.chunk.css",
+    "main.js": "/live-streamers/static/js/main.480d2d39.chunk.js",
+    "main.js.map": "/live-streamers/static/js/main.480d2d39.chunk.js.map",
+    "runtime-main.js": "/live-streamers/static/js/runtime-main.065e496b.js",
+    "runtime-main.js.map": "/live-streamers/static/js/runtime-main.065e496b.js.map",
+    "static/css/2.0624914a.chunk.css": "/live-streamers/static/css/2.0624914a.chunk.css",
+    "static/js/2.50eb6b6a.chunk.js": "/live-streamers/static/js/2.50eb6b6a.chunk.js",
+    "static/js/2.50eb6b6a.chunk.js.map": "/live-streamers/static/js/2.50eb6b6a.chunk.js.map",
+    "index.html": "/live-streamers/index.html",
+    "precache-manifest.a76ee11e28f12c0417798d800e88b39e.js": "/live-streamers/precache-manifest.a76ee11e28f12c0417798d800e88b39e.js",
+    "service-worker.js": "/live-streamers/service-worker.js",
+    "static/css/2.0624914a.chunk.css.map": "/live-streamers/static/css/2.0624914a.chunk.css.map",
+    "static/css/main.b882da27.chunk.css.map": "/live-streamers/static/css/main.b882da27.chunk.css.map"
   }
 }
