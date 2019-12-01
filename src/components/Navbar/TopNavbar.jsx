@@ -11,15 +11,15 @@ const TopNavbar = ({
   return (
     <Navbar color="dark" dark className="fixed-top flex-md-nowrap p-0 shadow">
       <Row>
-        <Col className="col-4">
+        <Col className="col-6">
           <NavbarBrand
-            href="http://localhost:3000"
+            href="https://dzrana.github.io/live-streamers/"
             className="col-sm-3 col-md-2 mr-0"
           >
-            Twitch
+            Live Streamers
           </NavbarBrand>
         </Col>
-        <Col className="col-8">
+        <Col className="col-6">
           <div className="d-xl-none dropdown">
             <Button
               className="btn btn-secondary dropdown-toggle"
