@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       liveChannelsStream: [],
       liveChannelsProfile: [],
-      currentChannel: ""
+      currentChannel: "",
     };
   }
 
@@ -23,7 +23,7 @@ class App extends Component {
     // Get logged-in user's id.
     try {
       const response = await fetch(`https://api.twitch.tv/helix/users`, {
-        headers: { Authorization: oauth }
+        headers: { Authorization: oauth, "Client-ID": clientId },
       });
       const json = await response.json();
       userId = json.data[0].id;
@@ -36,7 +36,7 @@ class App extends Component {
       const response = await fetch(
         `https://api.twitch.tv/helix/users/follows?from_id=${userId}&first=100`,
         {
-          headers: { Authorization: oauth }
+          headers: { Authorization: oauth, "Client-ID": clientId },
         }
       );
       const json = await response.json();
@@ -59,7 +59,7 @@ class App extends Component {
         }
 
         let response = await fetch(queryString, {
-          headers: { Authorization: oauth }
+          headers: { Authorization: oauth, "Client-ID": clientId },
         });
         let json = await response.json();
         this.setState({ liveChannelsStream: json.data });
@@ -74,7 +74,7 @@ class App extends Component {
         }
 
         response = await fetch(queryString, {
-          headers: { Authorization: oauth }
+          headers: { Authorization: oauth, "Client-ID": clientId },
         });
         json = await response.json();
         this.setState({ liveChannelsProfile: json.data });
@@ -86,7 +86,7 @@ class App extends Component {
     getStreamerData();
   }
 
-  changeChannel = url => {
+  changeChannel = (url) => {
     this.setState({ currentChannel: url });
   };
 
@@ -94,7 +94,7 @@ class App extends Component {
     const {
       liveChannelsStream,
       liveChannelsProfile,
-      currentChannel
+      currentChannel,
     } = this.state;
     return document.location.hash === "" ? (
       <Container className="d-flex justify-content-center align-items-center login">
