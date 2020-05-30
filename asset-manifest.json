@@ -1,17 +1,25 @@
 {
   "files": {
-    "main.css": "/live-streamers/static/css/main.b882da27.chunk.css",
-    "main.js": "/live-streamers/static/js/main.4617fadc.chunk.js",
-    "main.js.map": "/live-streamers/static/js/main.4617fadc.chunk.js.map",
-    "runtime-main.js": "/live-streamers/static/js/runtime-main.065e496b.js",
-    "runtime-main.js.map": "/live-streamers/static/js/runtime-main.065e496b.js.map",
-    "static/css/2.0624914a.chunk.css": "/live-streamers/static/css/2.0624914a.chunk.css",
-    "static/js/2.50eb6b6a.chunk.js": "/live-streamers/static/js/2.50eb6b6a.chunk.js",
-    "static/js/2.50eb6b6a.chunk.js.map": "/live-streamers/static/js/2.50eb6b6a.chunk.js.map",
+    "main.css": "/live-streamers/static/css/main.9e3c5b15.chunk.css",
+    "main.js": "/live-streamers/static/js/main.a8178032.chunk.js",
+    "main.js.map": "/live-streamers/static/js/main.a8178032.chunk.js.map",
+    "runtime-main.js": "/live-streamers/static/js/runtime-main.cf9dda4b.js",
+    "runtime-main.js.map": "/live-streamers/static/js/runtime-main.cf9dda4b.js.map",
+    "static/css/2.f93178fb.chunk.css": "/live-streamers/static/css/2.f93178fb.chunk.css",
+    "static/js/2.bc27617d.chunk.js": "/live-streamers/static/js/2.bc27617d.chunk.js",
+    "static/js/2.bc27617d.chunk.js.map": "/live-streamers/static/js/2.bc27617d.chunk.js.map",
     "index.html": "/live-streamers/index.html",
-    "precache-manifest.3fb4d946b74c95e8ff463e1feb2661b8.js": "/live-streamers/precache-manifest.3fb4d946b74c95e8ff463e1feb2661b8.js",
+    "precache-manifest.074c6fe5b9db6ac72e2cedfc195ece47.js": "/live-streamers/precache-manifest.074c6fe5b9db6ac72e2cedfc195ece47.js",
     "service-worker.js": "/live-streamers/service-worker.js",
-    "static/css/2.0624914a.chunk.css.map": "/live-streamers/static/css/2.0624914a.chunk.css.map",
-    "static/css/main.b882da27.chunk.css.map": "/live-streamers/static/css/main.b882da27.chunk.css.map"
-  }
+    "static/css/2.f93178fb.chunk.css.map": "/live-streamers/static/css/2.f93178fb.chunk.css.map",
+    "static/css/main.9e3c5b15.chunk.css.map": "/live-streamers/static/css/main.9e3c5b15.chunk.css.map",
+    "static/js/2.bc27617d.chunk.js.LICENSE.txt": "/live-streamers/static/js/2.bc27617d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cf9dda4b.js",
+    "static/css/2.f93178fb.chunk.css",
+    "static/js/2.bc27617d.chunk.js",
+    "static/css/main.9e3c5b15.chunk.css",
+    "static/js/main.a8178032.chunk.js"
+  ]
 }
