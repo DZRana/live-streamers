@@ -1,7 +1,5 @@
 # Live Streamers
 
-An application that uses the Marvel API to fetch and display Marvel characters which link to their respective bio.
-
 ## Demo
 
 ![Live Streamers Demo](demo/l-s_demo.gif)
