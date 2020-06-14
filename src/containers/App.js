@@ -138,7 +138,7 @@ class App extends Component {
                   id="chat_embed"
                   src={`https://www.twitch.tv/embed/${currentChannel.substring(
                     22
-                  )}/chat?darkpopout`}
+                  )}/chat?parent=dzrana.github.io&darkpopout`}
                   width="100%"
                   height="100%"
                 ></iframe>
