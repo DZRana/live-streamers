@@ -65,12 +65,12 @@ class App extends Component {
         this.setState({ liveChannelsStream: json.data });
 
         // Get their profiles
-        queryString = "https://api.twitch.tv/helix/users?id=";
+        queryString = "https://api.twitch.tv/helix/users?login=";
         const { liveChannelsStream } = this.state;
         for (let i = 0; i < liveChannelsStream.length; i++) {
           if (i !== liveChannelsStream.length - 1)
-            queryString += `${liveChannelsStream[i].user_id}&id=`;
-          else queryString += liveChannelsStream[i].user_id;
+            queryString += `${liveChannelsStream[i].user_login}&login=`;
+          else queryString += liveChannelsStream[i].user_login;
         }
 
         response = await fetch(queryString, {
