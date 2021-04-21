@@ -9,8 +9,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      liveChannelsStream: [],
-      liveChannelsProfile: [],
+      streamerArr: [],
       currentChannel: "",
     };
   }
@@ -62,22 +61,39 @@ class App extends Component {
           headers: { Authorization: oauth, "Client-ID": clientId },
         });
         let json = await response.json();
-        this.setState({ liveChannelsStream: json.data });
+        let newStreamerArr = [];
+        for (let streamer of json.data) {
+          let attr = {};
+          attr["id"] = streamer.id;
+          attr["user_name"] = streamer.user_name;
+          attr["title"] = streamer.title;
+          attr["viewer_count"] = streamer.viewer_count;
+          newStreamerArr.push(attr);
+        }
 
         // Get their profiles
         queryString = "https://api.twitch.tv/helix/users?login=";
-        const { liveChannelsStream } = this.state;
-        for (let i = 0; i < liveChannelsStream.length; i++) {
-          if (i !== liveChannelsStream.length - 1)
-            queryString += `${liveChannelsStream[i].user_login}&login=`;
-          else queryString += liveChannelsStream[i].user_login;
+        for (let i = 0; i < newStreamerArr.length; i++) {
+          if (i !== newStreamerArr.length - 1)
+            queryString += `${newStreamerArr[i].user_name}&login=`;
+          else queryString += newStreamerArr[i].user_name;
         }
 
         response = await fetch(queryString, {
           headers: { Authorization: oauth, "Client-ID": clientId },
         });
         json = await response.json();
-        this.setState({ liveChannelsProfile: json.data });
+        for (let existingStreamer of newStreamerArr) {
+          for (let streamerProfile of json.data) {
+            if (
+              existingStreamer.user_name.toLowerCase() === streamerProfile.login
+            ) {
+              existingStreamer["profile_image_url"] =
+                streamerProfile.profile_image_url;
+            }
+          }
+        }
+        this.setState({ streamerArr: newStreamerArr });
         setTimeout(getStreamerData, 12000);
       } catch (error) {
         console.log("ERROR BRO: ", error);
@@ -91,11 +107,7 @@ class App extends Component {
   };
 
   render() {
-    const {
-      liveChannelsStream,
-      liveChannelsProfile,
-      currentChannel,
-    } = this.state;
+    const { streamerArr, currentChannel } = this.state;
     return document.location.hash === "" ? (
       <Container className="d-flex justify-content-center align-items-center login">
         <a
@@ -107,16 +119,14 @@ class App extends Component {
     ) : (
       <div>
         <TopNavbar
-          liveChannelsStream={liveChannelsStream}
-          liveChannelsProfile={liveChannelsProfile}
+          streamerArr={streamerArr}
           changeChannel={this.changeChannel}
         />
         <Container fluid>
           <Row className="pt-5">
             <Col className="d-none d-xl-block ">
               <StreamerListSidebar
-                liveChannelsStream={liveChannelsStream}
-                liveChannelsProfile={liveChannelsProfile}
+                streamerArr={streamerArr}
                 changeChannel={this.changeChannel}
               />
             </Col>
