@@ -5,6 +5,10 @@ import TwitchPlayer from "react-player/lib/players/Twitch";
 import { Container, Row, Col, Button } from "reactstrap";
 var clientId = process.env.REACT_APP_CLIENT_ID;
 
+// const App = () => {
+//   test refactor branch
+// }
+
 class App extends Component {
   constructor() {
     super();
