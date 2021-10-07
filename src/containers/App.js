@@ -86,7 +86,7 @@ const App = () => {
   return document.location.hash === "" ? (
     <Container className="d-flex justify-content-center align-items-center login">
       <a
-        href={`https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=https://dzrana.github.io/&response_type=token&scope=channel_feed_read`}
+        href={`https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=https://dzrana.github.io/live-streamers/&response_type=token&scope=channel_feed_read`}
       >
         <Button className="bg-dark">Login</Button>
       </a>
