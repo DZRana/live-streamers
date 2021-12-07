@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^6.4.2",
     "axios": "^0.22.0",
     "bootstrap": "^4.6.0",
     "node-sass": "^4.14.1",
@@ -16,9 +17,9 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -37,6 +38,9 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^2.2.0"
+    "autoprefixer": "^9.8.8",
+    "gh-pages": "^2.2.0",
+    "postcss": "^7.0.39",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }

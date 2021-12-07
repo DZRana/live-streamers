@@ -10,6 +10,10 @@ const App = () => {
   const [currentChannel, setCurrentChannel] = useState("");
 
   const clientId = process.env.REACT_APP_CLIENT_ID;
+  const redirect_baseUri = "https://dzrana.github.io/live-streamers/";
+  const chat_url = "dzrana.github.io";
+  const redirect_baseUri_local = "http://localhost:3000/";
+  const chat_url_local = "localhost:3000";
 
   const getUserData = async () => {
     let userId = "";
@@ -86,7 +90,7 @@ const App = () => {
   return document.location.hash === "" ? (
     <Container className="d-flex justify-content-center align-items-center login">
       <a
-        href={`https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=https://dzrana.github.io/live-streamers/&response_type=token&scope=channel_feed_read`}
+        href={`https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirect_baseUri_local}&response_type=token&scope=channel_feed_read`}
       >
         <Button className="bg-dark">Login</Button>
       </a>
@@ -122,7 +126,7 @@ const App = () => {
                 id="chat_embed"
                 src={`https://www.twitch.tv/embed/${currentChannel.substring(
                   22
-                )}/chat?parent=dzrana.github.io&darkpopout`}
+                )}/chat?parent=${chat_url_local}&darkpopout`}
                 width="100%"
                 height="100%"
               ></iframe>
