@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import TopNavbar from "../components/Navbar/TopNavbar";
 import StreamerListSidebar from "../components/StreamerListSidebar/StreamerListSidebar";
 import TwitchPlayer from "react-player/lib/players/Twitch";
-import { Container, Row, Col, Button } from "reactstrap";
 import twitch from "../apis/twitch";
 
 const App = () => {

@@ -1,7 +1,5 @@
 import React from "react";
-import { Navbar, NavbarBrand, Button, Row, Col } from "reactstrap";
 import StreamerCard from "../StreamerListSidebar/StreamerCard";
-import "./TopNavbar.styles.scss";
 
 const TopNavbar = ({ streamerArr, changeChannel }) => {
   return (

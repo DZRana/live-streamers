@@ -1,7 +1,5 @@
 import React from "react";
-import { Nav } from "reactstrap";
 import StreamerCard from "./StreamerCard";
-import "./StreamerListSidebar.styles.scss";
 
 const StreamerListSidebar = ({ streamerArr, changeChannel }) => {
   return (

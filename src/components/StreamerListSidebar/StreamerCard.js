@@ -1,14 +1,4 @@
 import React from "react";
-import {
-  Button,
-  Card,
-  CardImg,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle
-} from "reactstrap";
-import "./StreamerCard.styles.scss";
 
 const StreamerCard = ({
   user_name,
@@ -16,7 +6,7 @@ const StreamerCard = ({
   viewer_count,
   url,
   profile_image_url,
-  changeChannel
+  changeChannel,
 }) => {
   return (
     <div>
