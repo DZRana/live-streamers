@@ -9,22 +9,24 @@ const StreamerCard = ({
   changeChannel,
 }) => {
   return (
-    <div>
-      <Card className="ml-2 mr-2 mb-1">
-        <Button onClick={() => changeChannel(url)}>
-          <CardImg
-            top
-            width="100%"
-            src={profile_image_url}
-            alt="Profile Image"
-          />
-          <CardBody>
-            <CardTitle>{user_name}</CardTitle>
-            <CardSubtitle>{title}</CardSubtitle>
-            <CardText>{`Viewers: ${viewer_count}`}</CardText>
-          </CardBody>
-        </Button>
-      </Card>
+    <div
+      className="mb-2 grid grid-cols-2 text-center"
+      onClick={() => changeChannel(url)}
+    >
+      <div className="flex flex-col">
+        <img
+          className="sm:h-52 sm:w-52 sm:m-auto"
+          src={profile_image_url}
+          alt="Streamer"
+        />
+        <div>
+          <div className="text-red-500">{user_name}</div>
+          <div className="text-purple-400">{`Viewers: ${viewer_count}`}</div>
+        </div>
+      </div>
+      <div className="w-full px-5 m-auto text-yellow-500 overflow-ellipsis overflow-hidden">
+        {title}
+      </div>
     </div>
   );
 };
