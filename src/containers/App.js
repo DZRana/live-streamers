@@ -111,7 +111,7 @@ const App = () => {
         />
       </div>
       <div className="flex flex-col w-screen h-screen sm:flex-row">
-        <div className="w-full h-2/3 sm:w-2/3 sm:h-full lg:w-4/5">
+        <div className="w-full h-1/2 sm:w-2/3 sm:h-full lg:w-4/5">
           <TwitchPlayer
             url={currentChannel}
             controls
@@ -120,7 +120,7 @@ const App = () => {
             height="100%"
           />
         </div>
-        <div className="w-full h-1/3 sm:w-1/3 sm:h-full lg:w-1/5">
+        <div className="w-full h-1/2 sm:w-1/3 sm:h-full lg:w-1/5">
           {currentChannel && (
             <iframe
               title="chat"
