@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/live-streamers/static/css/main.948c3dce.chunk.css",
-    "main.js": "/live-streamers/static/js/main.e53f39b4.chunk.js",
-    "main.js.map": "/live-streamers/static/js/main.e53f39b4.chunk.js.map",
+    "main.css": "/live-streamers/static/css/main.e95b7802.chunk.css",
+    "main.js": "/live-streamers/static/js/main.4e228978.chunk.js",
+    "main.js.map": "/live-streamers/static/js/main.4e228978.chunk.js.map",
     "runtime-main.js": "/live-streamers/static/js/runtime-main.bd0727e4.js",
     "runtime-main.js.map": "/live-streamers/static/js/runtime-main.bd0727e4.js.map",
     "static/js/2.cd77e2a2.chunk.js": "/live-streamers/static/js/2.cd77e2a2.chunk.js",
     "static/js/2.cd77e2a2.chunk.js.map": "/live-streamers/static/js/2.cd77e2a2.chunk.js.map",
     "index.html": "/live-streamers/index.html",
-    "static/css/main.948c3dce.chunk.css.map": "/live-streamers/static/css/main.948c3dce.chunk.css.map",
+    "static/css/main.e95b7802.chunk.css.map": "/live-streamers/static/css/main.e95b7802.chunk.css.map",
     "static/js/2.cd77e2a2.chunk.js.LICENSE.txt": "/live-streamers/static/js/2.cd77e2a2.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.bd0727e4.js",
     "static/js/2.cd77e2a2.chunk.js",
-    "static/css/main.948c3dce.chunk.css",
-    "static/js/main.e53f39b4.chunk.js"
+    "static/css/main.e95b7802.chunk.css",
+    "static/js/main.4e228978.chunk.js"
   ]
 }
