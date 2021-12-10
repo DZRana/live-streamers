@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TopNavbar from "../components/Navbar/TopNavbar";
 import StreamerListSidebar from "../components/StreamerListSidebar/StreamerListSidebar";
-import TwitchPlayer from "react-player/lib/players/Twitch";
-import { Container, Row, Col, Button } from "reactstrap";
+import TwitchPlayer from "react-player";
 import twitch from "../apis/twitch";
 
 const App = () => {
@@ -10,6 +9,10 @@ const App = () => {
   const [currentChannel, setCurrentChannel] = useState("");
 
   const clientId = process.env.REACT_APP_CLIENT_ID;
+  const redirect_baseUri = "https://dzrana.github.io/live-streamers/";
+  const chat_url = "dzrana.github.io";
+  const redirect_baseUri_local = "http://localhost:3000/";
+  const chat_url_local = "localhost:3000";
 
   const getUserData = async () => {
     let userId = "";
@@ -84,52 +87,55 @@ const App = () => {
   }, []);
 
   return document.location.hash === "" ? (
-    <Container className="d-flex justify-content-center align-items-center login">
-      <a
-        href={`https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=https://dzrana.github.io/live-streamers/&response_type=token&scope=channel_feed_read`}
-      >
-        <Button className="bg-dark">Login</Button>
-      </a>
-    </Container>
+    <div className="flex h-screen">
+      <span className="m-auto">
+        <a
+          className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+          href={`https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirect_baseUri}&response_type=token&scope=channel_feed_read`}
+        >
+          Login
+        </a>
+      </span>
+    </div>
   ) : streamerArr.length === 0 ? (
-    <div>LOADING</div>
+    <div className="flex h-screen">
+      <span className="m-auto text-white font-bold">LOADING</span>
+    </div>
   ) : (
-    <div>
+    <div className="h-screen w-screen">
       <TopNavbar streamerArr={streamerArr} changeChannel={changeChannel} />
-      <Container fluid>
-        <Row className="pt-5">
-          <Col className="d-none d-xl-block ">
-            <StreamerListSidebar
-              streamerArr={streamerArr}
-              changeChannel={changeChannel}
-            />
-          </Col>
-          <Col>
-            <TwitchPlayer
-              url={currentChannel}
-              controls
-              playing
-              width="63vw"
-              height="94vh"
-            />
-          </Col>
-          <Col>
-            {currentChannel && (
-              <iframe
-                title="chat"
-                frameBorder="0"
-                scrolling="yes"
-                id="chat_embed"
-                src={`https://www.twitch.tv/embed/${currentChannel.substring(
-                  22
-                )}/chat?parent=dzrana.github.io&darkpopout`}
-                width="100%"
-                height="100%"
-              ></iframe>
-            )}
-          </Col>
-        </Row>
-      </Container>
+      <div className="hidden">
+        <StreamerListSidebar
+          streamerArr={streamerArr}
+          changeChannel={changeChannel}
+        />
+      </div>
+      <div className="flex flex-col w-screen h-screen sm:flex-row">
+        <div className="w-full h-2/3 sm:w-2/3 sm:h-full lg:w-4/5">
+          <TwitchPlayer
+            url={currentChannel}
+            controls
+            playing
+            width="100%"
+            height="100%"
+          />
+        </div>
+        <div className="w-full h-1/3 sm:w-1/3 sm:h-full lg:w-1/5">
+          {currentChannel && (
+            <iframe
+              title="chat"
+              frameBorder="0"
+              scrolling="yes"
+              id="chat_embed"
+              src={`https://www.twitch.tv/embed/${currentChannel.substring(
+                22
+              )}/chat?parent=${chat_url}&darkpopout`}
+              width="100%"
+              height="100%"
+            ></iframe>
+          )}
+        </div>
+      </div>
     </div>
   );
 };
