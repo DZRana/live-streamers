@@ -91,7 +91,7 @@ const App = () => {
       <span className="m-auto">
         <a
           className="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
-          href={`https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirect_baseUri_local}&response_type=token&scope=channel_feed_read`}
+          href={`https://id.twitch.tv/oauth2/authorize?client_id=${clientId}&redirect_uri=${redirect_baseUri}&response_type=token&scope=channel_feed_read`}
         >
           Login
         </a>
@@ -129,7 +129,7 @@ const App = () => {
               id="chat_embed"
               src={`https://www.twitch.tv/embed/${currentChannel.substring(
                 22
-              )}/chat?parent=${chat_url_local}&darkpopout`}
+              )}/chat?parent=${chat_url}&darkpopout`}
               width="100%"
               height="100%"
             ></iframe>

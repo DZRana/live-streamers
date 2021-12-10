@@ -10,12 +10,12 @@ const StreamerCard = ({
 }) => {
   return (
     <div
-      className="mb-2 grid grid-cols-2 text-center"
+      className="flex flex-row mb-2 border-double border-4 rounded border-purple-400"
       onClick={() => changeChannel(url)}
     >
-      <div className="flex flex-col">
+      <div className="flex-col">
         <img
-          className="sm:h-52 sm:w-52 sm:m-auto"
+          className="sm:m-auto sm:w-52 md:w-36"
           src={profile_image_url}
           alt="Streamer"
         />
@@ -24,7 +24,7 @@ const StreamerCard = ({
           <div className="text-purple-400">{`Viewers: ${viewer_count}`}</div>
         </div>
       </div>
-      <div className="w-full px-5 m-auto text-yellow-500 overflow-ellipsis overflow-hidden">
+      <div className="w-full px-5 m-auto text-yellow-500 md:text-xl overflow-ellipsis overflow-hidden">
         {title}
       </div>
     </div>
